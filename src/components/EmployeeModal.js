@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import { X, Camera } from 'lucide-react';
-// IMPORT FIXED HERE
 import { REGIONS } from '../utils/mockData';
 
 const EmployeeModal = ({ isOpen, onClose, onSave, initialData }) => {
@@ -18,7 +17,7 @@ const EmployeeModal = ({ isOpen, onClose, onSave, initialData }) => {
                 name: '',
                 gender: 'Male',
                 dob: '',
-                state: REGIONS[0], // Default to first region
+                state: REGIONS[0],
                 isActive: true,
                 image: ''
             });
@@ -27,7 +26,7 @@ const EmployeeModal = ({ isOpen, onClose, onSave, initialData }) => {
         setRegionQuery('');
     }, [initialData, isOpen]);
 
-    // Logic for searchable region dropdown
+    // searchable region dropdown
     const filteredRegions = REGIONS.filter(r =>
         r.toLowerCase().includes(regionQuery.toLowerCase())
     );
@@ -118,7 +117,6 @@ const EmployeeModal = ({ isOpen, onClose, onSave, initialData }) => {
 
                     <div style={formGroup}>
                         <label style={labelStyle}>Region / State</label>
-                        {/* REGION SEARCH BAR */}
                         <input
                             placeholder="Type to filter regions..."
                             style={{ ...inputStyle, marginBottom: '8px', fontSize: '12px', height: '35px', backgroundColor: '#f8fafc' }}
@@ -155,7 +153,7 @@ const EmployeeModal = ({ isOpen, onClose, onSave, initialData }) => {
     );
 };
 
-// Styles (unchanged from your previous logic)
+// Styles
 const overlayStyle = { position: 'fixed', inset: 0, backgroundColor: 'rgba(15, 23, 42, 0.75)', display: 'flex', alignItems: 'center', justifyContent: 'center', zIndex: 1000, padding: '20px' };
 const modalStyle = { backgroundColor: 'white', width: '100%', maxWidth: '480px', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25)' };
 const headerStyle = { padding: '20px 24px', borderBottom: '1px solid #f1f5f9', display: 'flex', justifyContent: 'space-between', alignItems: 'center' };

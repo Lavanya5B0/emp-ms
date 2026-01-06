@@ -7,10 +7,7 @@ const Dashboard = ({ onAddClick, onEditClick, onDelete }) => {
     const [search, setSearch] = useState('');
     const [genderFilter, setGenderFilter] = useState('All');
     const [statusFilter, setStatusFilter] = useState('All');
-
-    // Track hover state for table action icons
-    const [hoveredAction, setHoveredAction] = useState(null); // format: {id, type}
-
+    const [hoveredAction, setHoveredAction] = useState(null);
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 5;
 
@@ -63,7 +60,6 @@ const Dashboard = ({ onAddClick, onEditClick, onDelete }) => {
                             onChange={(e) => handleFilterChange(setSearch, e.target.value)}
                         />
                     </div>
-                    {/* Added cursor: pointer in selectStyle below */}
                     <select style={selectStyle} onChange={(e) => handleFilterChange(setGenderFilter, e.target.value)}>
                         <option value="All">All Genders</option>
                         <option value="Male">Male</option>
@@ -200,7 +196,7 @@ const Dashboard = ({ onAddClick, onEditClick, onDelete }) => {
     );
 };
 
-// --- Styles Updated ---
+//Styles
 const actionBarStyle = { display: 'flex', justifyContent: 'space-between', alignItems: 'center', backgroundColor: 'white', padding: '20px', borderRadius: '16px', boxShadow: '0 1px 3px rgba(0,0,0,0.1)', marginBottom: '24px', gap: '15px', flexWrap: 'wrap' };
 const searchInputStyle = { padding: '10px 10px 10px 40px', borderRadius: '8px', border: '1px solid #e2e8f0', width: '100%' };
 const selectStyle = { padding: '10px', borderRadius: '8px', border: '1px solid #e2e8f0', backgroundColor: 'white', cursor: 'pointer' }; // Added cursor pointer

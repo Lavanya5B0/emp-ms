@@ -26,7 +26,7 @@ const Login = () => {
 
     return (
         <div style={containerStyle}>
-            {/* Left Side: Brand/Visual Area */}
+            {/* Left */}
             <div style={brandSectionStyle}>
                 <div style={{ maxWidth: '400px' }}>
                     <ShieldCheck size={60} color="white" style={{ marginBottom: '20px' }} />
@@ -35,7 +35,7 @@ const Login = () => {
                 </div>
             </div>
 
-            {/* Right Side: Login Form */}
+            {/* Right: Login form */}
             <div style={formSectionStyle}>
                 <div style={cardStyle}>
                     <h2 style={headerStyle}>HR Admin Login</h2>
@@ -79,8 +79,7 @@ const Login = () => {
     );
 };
 
-// --- Updated Styles ---
-
+// Styles
 const containerStyle = {
     display: 'flex',
     minHeight: '100vh',
@@ -97,7 +96,6 @@ const brandSectionStyle = {
     alignItems: 'center',
     padding: '60px',
     color: 'white',
-    // Hide on small screens for mobile responsiveness
     '@media (max-width: 768px)': { display: 'none' }
 };
 

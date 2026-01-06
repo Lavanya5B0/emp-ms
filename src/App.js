@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import EmployeeModal from './components/EmployeeModal';
 
-// Auth Guard Component
+// Auth guard component
 const ProtectedRoute = ({ children }) => {
   const { user } = useContext(GlobalContext);
   return user ? children : <Navigate replace to="/" />;
@@ -34,7 +34,7 @@ const MainContent = () => {
 
       // Snackbar logic
       setMessage("Employee deleted successfully!");
-      setTimeout(() => setMessage(null), 3000); // Hide after 3 seconds
+      setTimeout(() => setMessage(null), 3000);
     }
   };
 
@@ -49,7 +49,8 @@ const MainContent = () => {
           {message}
         </div>
       )}
-      {/* Enhanced Navigation */}
+
+      {/* Navigation */}
       <nav style={{
         backgroundColor: 'white', padding: '16px 32px', borderBottom: '1px solid #e2e8f0',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center',
@@ -59,6 +60,8 @@ const MainContent = () => {
           <div style={{ width: '32px', height: '32px', backgroundColor: '#2563eb', borderRadius: '8px' }}></div>
           <h1 style={{ fontSize: '20px', fontWeight: '800', color: '#1e293b', margin: 0 }}>HRMS Portal</h1>
         </div>
+
+        {/* Logout button */}
         <button
           onMouseEnter={() => setIsLogoutHovered(true)}
           onMouseLeave={() => setIsLogoutHovered(false)}
@@ -66,7 +69,7 @@ const MainContent = () => {
           style={{
             background: 'none',
             border: 'none',
-            color: isLogoutHovered ? '#b91c1c' : '#ef4444', // Darker red on hover
+            color: isLogoutHovered ? '#b91c1c' : '#ef4444',
             fontWeight: '700',
             cursor: 'pointer',
             fontSize: '15px',

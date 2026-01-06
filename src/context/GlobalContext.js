@@ -8,7 +8,6 @@ export const GlobalProvider = ({ children }) => {
         const saved = localStorage.getItem('employees');
         const parsedSaved = saved ? JSON.parse(saved) : [];
 
-        // If the file has MORE employees than the storage, use the file
         if (initialEmployees.length > parsedSaved.length) {
             return initialEmployees;
         }
